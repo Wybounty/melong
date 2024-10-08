@@ -3,15 +3,20 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "concurrently \"npm run dev:astro\" \"npm run dev:hono\"",
+    "dev:astro": "astro dev",
+    "dev:hono": "ts-node --loader ts-node/esm backend/server.ts",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "hono": "ts-node server.ts"
   },
   "dependencies": {
-    "astro": "^4.15.12",
     "@astrojs/check": "^0.9.4",
+    "astro": "^4.15.12",
+    "concurrently": "^9.0.1",
+    "hono": "^4.6.3",
     "typescript": "^5.6.2"
   }
 }

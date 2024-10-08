@@ -1,3 +1,11 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "compilerOptions": {
+    "target": "ESNext",         // Cible de compilation
+    "module": "ESNext",         // Type de module
+    "strict": true,             // Mode strict
+    "esModuleInterop": true,    // Compatibilité avec les modules ES
+    "skipLibCheck": true,       // Ignorer la vérification des définitions de type
+    "forceConsistentCasingInFileNames": true // Casse cohérente dans les noms de fichiers
+  },
+  "include": ["backend/**/*.ts"] // Inclure tous les fichiers TypeScript dans le dossier backend
 }
